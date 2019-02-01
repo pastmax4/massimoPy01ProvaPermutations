@@ -6,12 +6,15 @@ Created on 30 gen 2019
 https://www.geeksforgeeks.org/generate-all-the-permutation-of-a-list-in-python/
 
 '''
-
 Keys=[]
 N=3
 listSymb=['A','B','c']
 jTot=1
 TreeInd = 0
+
+
+
+
 
 PermutationCode = {}
 for i in range(N,-1,-1):
@@ -32,9 +35,11 @@ for i in range(N,-1,-1):
         #print('Father:', N-i,Fj ,'Key:',N-i+1,j)
         
         print('Father:', FatherKeys ,'Key:', Keys)
-        PermutationCode['F'+str(FatherKeys[0])+ '|' + str(FatherKeys[1])+'K'+str(Keys[0]) + '|' + str(Keys[1])+'L']='Ciao'     
+        PermutationCode['F'+str(FatherKeys[0])+ ',' + str(FatherKeys[1])+'K'+str(Keys[0]) + ',' + str(Keys[1])+'V']='Ciao'     
 
 #-----------------------------------
+#-----------------------------------
+
 for key in PermutationCode:
     print(key)        
 
@@ -45,20 +50,27 @@ for key in PermutationCode:
         PermutationCode[key]=listSymb[ind]
         ind=ind+1
 
-for key in PermutationCode:       
-    if 'F1' in key:
-        print(key)
-        start = key.find('F') 
-        end = key.find('K')
-        Fat=key[start+1:end]       
-        print('Fat--->',Fat)
+#-----------------------------------
+#-----------------------------------
+for key01 in PermutationCode:       
+    if 'K2' in key01:
+        #print(key)
+        startF = key01.find('F') 
+        endF = key01.find('K')
+        Fat=key01[startF+1:endF]    
+        print('Fat',Fat)   
+        for key02 in PermutationCode:    
+            if 'K'+Fat in key02:
+                print('---',key02)
+                
+
+ 
 
 
-#---------------------------------------------
+#------------------------------------
 for key in PermutationCode:
-    print(PermutationCode[key])        
+    print(key,PermutationCode[key])        
 
         
-
 
 
