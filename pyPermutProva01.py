@@ -8,7 +8,8 @@ https://www.geeksforgeeks.org/generate-all-the-permutation-of-a-list-in-python/
 '''
 
 Keys=[]
-N=4
+N=3
+listSymb=['A','B','c']
 jTot=1
 TreeInd = 0
 
@@ -31,8 +32,33 @@ for i in range(N,-1,-1):
         #print('Father:', N-i,Fj ,'Key:',N-i+1,j)
         
         print('Father:', FatherKeys ,'Key:', Keys)
-        PermutationCode[str(FatherKeys[0])+ '|' + str(FatherKeys[1])+' '+str(Keys[0]) + '|' + str(Keys[1])]='Ciao'     
+        PermutationCode['F'+str(FatherKeys[0])+ '|' + str(FatherKeys[1])+'K'+str(Keys[0]) + '|' + str(Keys[1])+'L']='Ciao'     
+
+#-----------------------------------
+for key in PermutationCode:
+    print(key)        
+
+#-----------------------------------
+ind=0
+for key in PermutationCode:        
+    if 'F0' in key:       
+        PermutationCode[key]=listSymb[ind]
+        ind=ind+1
+
+for key in PermutationCode:       
+    if 'F1' in key:
+        print(key)
+        start = key.find('F') 
+        end = key.find('K')
+        Fat=key[start+1:end]       
+        print('Fat--->',Fat)
 
 
-for el in PermutationCode:
-    print(el,PermutationCode[el])
+#---------------------------------------------
+for key in PermutationCode:
+    print(PermutationCode[key])        
+
+        
+
+
+
