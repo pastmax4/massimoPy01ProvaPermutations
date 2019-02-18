@@ -1,0 +1,40 @@
+'''
+Created on 14 feb 2019
+
+@author: pasteris
+'''
+import pyPermutations
+
+#--------------------------------------
+#listOfSymbols=['A','B','C','D']
+#listOfSymbols=['P','A','S','T','E','R','I','S']
+listOfSymbols=['L','O','R','E','N','Z','O']
+listWords=pyPermutations.constrPermWords02(inListOfSymbols=listOfSymbols)
+
+print('numero=',str(len(listWords)))
+
+
+#--------------------------------------
+print('<<<<<<<<<<<<<<<<<<<')
+# listOfSymbols.clear()
+# listOfSymbols=['X','Y','Z']
+# listWords=pyPermutations.constrPermWords02(inListOfSymbols=listOfSymbols)
+# 
+# for el in listWords:
+#     print(el)
+
+#--------------------------------------
+
+#listWordsCleared =pyPermutations.clearFromListSomeWords(inListToClear=listWords,
+#                                        inListSymGroup=['P','S','T','R'] )
+
+
+
+
+c=0
+for an in listWords:
+    c+=1
+    print(c,'] ',an)
+    if c % 100 ==0:
+        input("Press Enter to continue ...")
+
